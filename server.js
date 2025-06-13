@@ -1,18 +1,7 @@
 import http from "http";
-
 const PORT = 3000;
+import app from "./app.js";
 
-const rotas = {
-    "/": "API Rest JOAO PEDRO DE ALENCAR VIDAL",
-    "/livros": "Entrei na rota livros",
-    "/autores": "Entrei na rota autores"
-};
-
-const server = http.createServer((req, res) =>{
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end(rotas[req.url]);
-});
-
-server.listen(PORT, ()=>{
-    console.log("Servidor rodando");
+app.listen(PORT, ()=>{
+    console.log(`Servidor rodando em http://localhost:${PORT}/`);
 });
