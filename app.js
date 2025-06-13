@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
     res.status(200).send("Bem vindo a API João Vidal");
 });
 
+app.get('/listar', (req, res) => {
+    res.status(200).json(clientes);
+});
+
 app.get('/listar/:id', (req, res) => {
     const index = listarCliente(req.params.id);
     if (index === -1) {
