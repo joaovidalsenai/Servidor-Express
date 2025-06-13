@@ -10,9 +10,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaovidalsenai/Servidor-Express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joaovidalsenai/Servidor-Express/issues"
+  },
+  "homepage": "https://github.com/joaovidalsenai/Servidor-Express#readme",
+  "description": ""
 }

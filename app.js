@@ -13,6 +13,8 @@ let clientes = [
     }
 ];
 
+let nextId = 3;
+
 function listarCliente(id) {
     return clientes.findIndex(cliente => cliente.id === Number(id));
 }
@@ -34,8 +36,13 @@ app.get('/listar/:id', (req, res) => {
 });
 
 app.post('/cadastrar', (req, res) => {
-    clientes.push(req.body);
-    res.status(201).send('Cliente cadastrado com sucesso!');
+    const { nome } = req.body;
+    const novoCliente = {
+        id: nextId++,
+        nome
+    };
+    clientes.push(novoCliente);
+    res.status(201).json(novoCliente);
 });
 
 app.put('/editar/:id', (req, res) => {
