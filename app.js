@@ -51,10 +51,12 @@ app.put('/editar/:id', (req, res) => {
     const cliente = clientes.find(cliente => cliente.id === id);
 
     if (!cliente) {
-        return res.status(404).send(`Cliente com id "${id}" não encontrado`);
+        res.status(404).send(`Cliente com id "${id}" não encontrado`);
     }
-    cliente.nome = nome;
-    res.status(200).send(`Dados do cliente com id "${id}" atualizados com sucesso`);
+    else {
+        cliente.nome = nome;
+        res.status(200).send(`Dados do cliente com id "${id}" atualizados com sucesso`);
+    }
 });
 
 app.delete('/remover/:id', (req, res) => {
